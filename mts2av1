@@ -1,0 +1,6 @@
+#!/bin/sh
+
+file="$1"
+ffmpeg -i "$file" -c:v libaom-av1 -strict experimental -b:v 1.333M -pass 1 -an -f matroska /dev/null && \
+ffmpeg -i "$file" -c:v libaom-av1 -strict experimental -b:v 1.333M -pass 2 -c:a libopus "${file%.[mts][MTS]}-av1.mkv"
+
