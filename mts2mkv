@@ -1,0 +1,3 @@
+#!/usr/bin/env
+file="$1"
+ffmpeg -i "$file" -scodec copy -acodec copy -vcodec copy -f matroska "${file%.[mts][MTS]}.mkv"
